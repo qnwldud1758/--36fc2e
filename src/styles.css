@@ -1,0 +1,40 @@
+@import "tailwindcss" source("./");
+
+@theme {
+  --color-tomato: #e8452c;
+  --color-tomato-dark: #c4361f;
+  --color-cream: #fbf6ef;
+  --color-paper: #fffdf9;
+  --color-ink: #1d1a17;
+  --color-muted: #7a7068;
+  --color-line: #ece3d6;
+  --color-mustard: #f2b632;
+  --font-sans: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;
+  --font-display: 'Gowun Batang', 'Nanum Myeongjo', serif;
+}
+
+html {
+  background: var(--color-cream);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+
+.pt-safe { padding-top: env(safe-area-inset-top); }
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.rise { animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
